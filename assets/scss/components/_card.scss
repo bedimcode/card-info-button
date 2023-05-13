@@ -1,0 +1,161 @@
+/*=============== CARD ===============*/
+.container{
+    height: 100vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
+.card{
+    position: relative;
+    width: 290px;
+    background: var(--gradient-color);
+    border-radius: 1rem 1rem 11rem 11rem;
+    padding: 2.5rem 1.5rem 3.5rem;
+    text-align: center;
+    box-shadow: 0 8px 32px hsla(178, 55%, 20%, .15);
+
+    &__img{
+        width: 90px;
+    }
+    &__border{
+        width: 124px;
+        height: 124px;
+        background-color: var(--first-color-light);
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: grid;
+        place-items: center;
+    }
+    &__perfil{
+        width: 104px;
+        height: 104px;
+        background-color: var(--first-color-lighten);
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    &__name,
+    &__profession{
+        color: var(--white-color);
+    }
+    &__name{
+        font-size: var(--h2-font-size);
+        font-weight: 600;
+        margin-bottom: .25rem;
+    }
+    &__profession{
+        font-size: var(--smaller-font-size);
+        font-weight: 500;
+    }
+}
+
+/*=============== CARD INFO ===============*/
+.info{
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white-color);
+    padding: 2.5rem 1.5rem 3.3rem;
+    border-radius: 1rem 1rem 11rem 11rem;
+    clip-path: circle(16px at 250px 40px);
+    transition: clip-path .4s ease-in-out;
+    
+    &__icon{
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        color: var(--first-color);
+        display: inline-flex;
+        padding: .25rem;
+        cursor: pointer;
+        transition: opacity .3s;
+    }
+    &__img{
+        width: 45px;
+    }
+    &__border{
+        width: 64px;
+        height: 64px;
+        background-color: var(--first-color-light);
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: grid;
+        place-items: center;
+        transform: translateX(-3rem);
+        transition: transform .8s;
+    }
+    &__perfil{
+        width: 52px;
+        height: 52px;
+        background-color: var(--first-color-lighten);
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    &__data{
+        display: grid;
+        row-gap: .25rem;
+        margin-bottom: 1.5rem;
+        transform: translateX(-4rem);
+        transition: transform 1s;
+    }
+    &__name{
+        font-size: var(--normal-font-size);
+        color: var(--title-color);
+    }
+    &__profession,
+    &__location{
+        font-size: var(--smaller-font-size);
+    }
+    &__social{
+        display: flex;
+        justify-content: center;
+        column-gap: 1rem;
+        transform: translateX(-5rem);
+        transition: transform 1.2s;
+
+        &-link{
+            width: 32px;
+            height: 32px;
+            background-color: var(--first-color-light);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: transform .3s;
+
+            &:hover{
+                transform: translateY(-.25rem);
+            }
+        }
+        &-icon{
+            display: inline-flex;
+            background: var(--gradient-color);
+            padding: .25rem;
+            border-radius: 50%;
+            color: var(--white-color);
+            font-size: 1rem;
+        }
+    }
+}
+
+/* Card info animation */
+.info{
+    &:hover{
+        clip-path: circle(75%);
+    }
+    &:hover .info__icon{
+        opacity: 0;
+    }
+    &:hover .info__border,
+    &:hover .info__data,
+    &:hover .info__social{
+        transform: translateX(0);
+    }
+}
